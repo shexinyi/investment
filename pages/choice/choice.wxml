@@ -1,0 +1,39 @@
+<!--pages/survey/survey.wxml-->
+
+
+<view class="list">
+    <view  wx:for="{{finishItems}}"   wx:key="modelId"  wx:for-item="surveyModelVo" >
+    <!-- <view  class="modelTitle">{{surveyModelVo.modelTitle}}</view>   -->
+      <view class="qNo">{{surveyModelVo.modelId}}/{{total}}</view>
+    <!--WXML示例代码-->
+    <mp-cells title="{{surveyModelVo.modelTitle}}">
+      <view wx:if="{{surveyModelVo.modelId==17||surveyModelVo.modelId==18}}">
+          <mp-checkbox-group  id="{{surveyModelVo.modelId }}" prop="checkbox" multi="{{true}}" bindchange="checkboxChange">
+              <mp-checkbox wx:for="{{surveyModelVo.surveyItems}}" wx:key="modelDetailId" label="{{item.content}}"  value="{{item.modelDetailId}}" checked="{{item.checked}}"></mp-checkbox>
+          </mp-checkbox-group>
+      </view>
+      <view wx:else>
+          <mp-checkbox-group id="{{surveyModelVo.modelId }}" prop="radio" multi="{{false}}" bindchange="radioChange">
+          <mp-checkbox wx:for="{{surveyModelVo.surveyItems}}" wx:key="modelDetailId" label="{{item.content}}" value="{{item.modelDetailId}}" checked="{{item.checked}}"></mp-checkbox>
+        </mp-checkbox-group> 
+      </view>
+    </mp-cells>
+      <view class="weui-btn-area"></view>
+    </view>
+</view>
+
+
+
+ <view class="weui-btn-area"  wx:if="{{showSubmit}}">
+            <button class="weui-btn" type="primary" bindtap="submitData">查看分数</button>
+ </view>
+
+ <!-- <view class="submitBtn" wx:if="{{showSubmit}}">
+    <button style="background-color:blue;color:white;" type="default" size="mini" bindtap="submitData">查看分数</button>
+  </view> -->
+
+  <view class="{{interStyle}}">
+
+</view>
+  <view id="bot" class="{{tempStyle}}">
+</view>

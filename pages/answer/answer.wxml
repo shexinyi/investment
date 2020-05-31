@@ -1,0 +1,53 @@
+<!--pages/answer/answer.wxml-->
+<!-- 
+<view  class='btn'>
+ <image  src="answer.jpg" mode='widthFix'>  
+     </image> 
+</view> -->
+<!-- <view  class='btn'>
+ <image  src="1.jpg" mode='widthFix'>  
+  </image> 
+  <image  src="2.jpg" mode='widthFix'>  
+  </image> 
+</view> -->
+<!-- <view  class='btn'>
+
+ <image  src="{{pic1}}" mode='widthFix'>  
+  </image> 
+  <image  src="{{pic2}}" mode='widthFix'>  
+  </image> 
+</view> -->
+<!-- <web-view src="https://123.honpi.com/gp/fx.html"></web-view> -->
+
+
+<view class="list">
+    <view  wx:for="{{surveyModelList}}"   wx:key ="modelId"  wx:for-item="surveyModelVo" >
+      <view wx:if="{{surveyModelVo.modelId==17||surveyModelVo.modelId==18}}">
+         <mp-cells title="{{surveyModelVo.modelTitle   +'('+ surveyModelVo.answer+')'  }}">
+            <mp-checkbox-group prop="checkbox" multi="{{true}}" >
+                <mp-checkbox wx:for="{{surveyModelVo.surveyItems}}" wx:key="modelDetailId" label="{{item.content+' '+item.score +'分'}}"  value="{{item.modelDetailId}}" checked="{{item.checked}}"></mp-checkbox>
+            </mp-checkbox-group>
+          </mp-cells>
+      </view>
+      <view wx:else>
+          <mp-cells title="{{surveyModelVo.modelTitle   +'('+ surveyModelVo.answer+')'  }}">
+            <mp-checkbox-group prop="checkbox" multi="{{fasle}}" >
+                <mp-checkbox wx:for="{{surveyModelVo.surveyItems}}" wx:key="modelDetailId" label="{{item.content+' '+item.score +'分'}}"  value="{{item.modelDetailId}}" checked="{{item.checked}}"></mp-checkbox>
+            </mp-checkbox-group>
+          </mp-cells>
+       </view>
+
+
+       <view class="weui-btn-area"></view>
+    </view>
+
+</view>
+
+
+
+
+
+<!-- 
+ <view class="weui-btn-area">
+             <button   class="weui-btn" bindtap="kindToggle">重新测试</button>
+ </view> -->

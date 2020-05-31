@@ -1,0 +1,23 @@
+/* pages/answer/answer.wxss */
+
+
+.btn{
+  width: 100%;
+   padding: 10rpx; 
+
+  
+  background: none;
+  margin-right: 30rpx;
+}
+/* .btn image{
+  width: 100%;
+} */
+
+.list{
+  padding: 28rpx;
+  border: 120rpx;
+}
+
+.modelTitle{
+  font-size: 36rpx;
+}

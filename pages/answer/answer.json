@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-checkbox-group": "/weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-checkbox": "/weui-miniprogram/checkbox/checkbox",
+    "mp-cells": "/weui-miniprogram/cells/cells",
+    "mp-searchbar": "/weui-miniprogram/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "答案"
+}
